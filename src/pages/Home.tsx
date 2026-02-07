@@ -1,52 +1,75 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, Code2, Sparkles, Zap, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
 import { ProjectCard } from '@/components/ProjectCard';
 import { useFeaturedProjects } from '@/hooks/useProjects';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { data: projects, isLoading } = useFeaturedProjects();
+  const [text, setText] = useState('');
+  const fullText = 'código';
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-24 md:py-32 overflow-hidden min-h-[90vh] flex items-center justify-center">
         {/* Background decoration */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] animate-float opacity-50" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px] animate-float opacity-50" style={{ animationDelay: '2s' }} />
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto text-center"
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 text-primary text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-secondary/50 backdrop-blur-md border border-primary/20 text-primary text-sm font-medium shadow-lg shadow-primary/10"
             >
-              <Sparkles className="w-4 h-4" />
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
               Disponível para novos projetos
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Transformo ideias em{' '}
-              <span className="gradient-text">código</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight">
+              Transformo ideias em <br className="hidden md:block" />
+              <span className="gradient-text relative inline-block">
+                {text}
+                <span className="animate-pulse text-primary ml-1">|</span>
+              </span>
             </h1>
 
             {/* Bio */}
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Desenvolvedor freelancer especializado em criar aplicações web modernas, 
-              escaláveis e com excelente experiência de usuário. Do conceito ao deploy.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+              Desenvolvedor Full Stack especializado em criar experiências digitais imersivas e escaláveis.
             </p>
 
             {/* CTAs */}
@@ -54,18 +77,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button asChild size="lg" className="gap-2 glow">
+              <Button asChild size="lg" className="h-12 px-8 text-lg gap-2 glow rounded-full">
                 <Link to="/contato">
                   Iniciar Projeto
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2">
+              <Button asChild variant="outline" size="lg" className="h-12 px-8 text-lg gap-2 rounded-full border-primary/20 hover:bg-primary/10">
                 <Link to="/projetos">
                   Ver Projetos
-                  <Code2 className="w-4 h-4" />
+                  <Terminal className="w-5 h-5" />
                 </Link>
               </Button>
             </motion.div>

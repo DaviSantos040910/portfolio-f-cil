@@ -16,7 +16,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="group relative bg-card rounded-xl border border-border overflow-hidden hover-lift"
+      className="group relative bg-card/50 backdrop-blur-sm rounded-xl border border-border overflow-hidden hover-lift hover:border-primary/50 transition-colors duration-300"
     >
       {/* Thumbnail */}
       <div className="relative aspect-video bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden">
@@ -24,19 +24,19 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           <img
             src={project.thumbnail_url}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-6xl font-bold text-primary/20">
+          <div className="w-full h-full flex items-center justify-center bg-secondary/20">
+            <div className="text-6xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
               {project.title.charAt(0)}
             </div>
           </div>
         )}
         
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+        <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+          <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             {project.live_url && (
               <a
                 href={project.live_url}
@@ -44,7 +44,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Button size="sm" variant="secondary" className="gap-2">
+                <Button size="sm" className="gap-2 rounded-full shadow-lg hover:scale-105 transition-transform">
                   <ExternalLink className="w-4 h-4" />
                   Demo
                 </Button>
@@ -57,7 +57,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Button size="sm" variant="secondary" className="gap-2">
+                <Button size="sm" variant="secondary" className="gap-2 rounded-full shadow-lg hover:scale-105 transition-transform">
                   <Github className="w-4 h-4" />
                   Código
                 </Button>
@@ -68,7 +68,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         {/* Featured badge */}
         {project.is_featured && (
-          <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+          <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground shadow-lg shadow-primary/20">
             Destaque
           </Badge>
         )}
@@ -77,9 +77,9 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       {/* Content */}
       <div className="p-6">
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-3">
+        <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.slice(0, 4).map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
+            <Badge key={tag} variant="secondary" className="text-xs bg-secondary/50 border-transparent group-hover:border-primary/20 transition-colors">
               {tag}
             </Badge>
           ))}
@@ -91,19 +91,19 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors tracking-tight">
           {project.title}
         </h3>
 
         {/* Summary */}
-        <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+        <p className="text-muted-foreground text-sm line-clamp-2 mb-6">
           {project.summary}
         </p>
 
         {/* Link */}
         <Link
           to={`/projetos/${project.slug}`}
-          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all group-hover:text-accent"
         >
           Ver detalhes
           <ArrowRight className="w-4 h-4" />

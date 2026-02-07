@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import {
@@ -66,6 +66,7 @@ export default function ProjectForm() {
     handleSubmit,
     watch,
     reset,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
@@ -513,7 +514,16 @@ const projectData = {
                           Torna o projeto visível publicamente
                         </p>
                       </div>
-                      <Switch {...register('is_published')} />
+                      <Controller
+                        name="is_published"
+                        control={control}
+                        render={({ field }) => (
+                          <Switch
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
+                        )}
+                      />
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -523,7 +533,16 @@ const projectData = {
                           Exibe o projeto na seção de destaques
                         </p>
                       </div>
-                      <Switch {...register('is_featured')} />
+                      <Controller
+                        name="is_featured"
+                        control={control}
+                        render={({ field }) => (
+                          <Switch
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
+                        )}
+                      />
                     </div>
                   </div>
                 </motion.section>
