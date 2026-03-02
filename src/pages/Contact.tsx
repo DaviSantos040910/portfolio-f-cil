@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Mail, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -35,11 +35,11 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     // In production, replace with actual email sending logic
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     console.log('Form data:', data);
     toast.success('Mensagem enviada com sucesso! Entrarei em contato em breve.');
     setIsSubmitted(true);
@@ -62,7 +62,7 @@ export default function Contact() {
                 Entre em Contato
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Tem um projeto em mente? Vamos conversar sobre como posso 
+                Tem um projeto em mente? Vamos conversar sobre como posso
                 ajudar a tornar sua ideia realidade.
               </p>
             </div>
@@ -77,10 +77,10 @@ export default function Contact() {
               >
                 <div>
                   <h2 className="text-xl font-semibold mb-6">Informações</h2>
-                  
+
                   <div className="space-y-4">
                     <a
-                      href="mailto:contato@email.com"
+                      href="mailto:davisantossousa2@gmail.com"
                       className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors"
                     >
                       <div className="p-2 rounded-lg bg-primary/10">
@@ -88,19 +88,24 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">E-mail</p>
-                        <p className="font-medium">contato@email.com</p>
+                        <p className="font-medium">davisantossousa2@gmail.com</p>
                       </div>
                     </a>
 
-                    <div className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        <MapPin className="w-5 h-5 text-primary" />
+                    <a
+                      href="https://wa.me/5589981013110?text=Olá,%20vim%20pelo%20seu%20portfólio!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border hover:border-[#25D366]/50 transition-colors group"
+                    >
+                      <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-[#25D366]/10 transition-colors">
+                        <Phone className="w-5 h-5 text-primary group-hover:text-[#25D366] transition-colors" />
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">Localização</p>
-                        <p className="font-medium">Brasil (Remoto)</p>
+                        <p className="text-sm text-muted-foreground">Telefone / WhatsApp</p>
+                        <p className="font-medium">+55 89 98101-3110</p>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
 
@@ -108,7 +113,7 @@ export default function Contact() {
                   <h3 className="text-lg font-semibold mb-4">Redes Sociais</h3>
                   <div className="flex gap-3">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/DaviSantos040910"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-lg bg-card border border-border hover:border-primary/50 hover:text-primary transition-colors"
@@ -128,7 +133,7 @@ export default function Contact() {
 
                 <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
                   <p className="text-sm">
-                    💡 <strong>Dica:</strong> Quanto mais detalhes sobre seu 
+                    💡 <strong>Dica:</strong> Quanto mais detalhes sobre seu
                     projeto você incluir, mais preciso será meu feedback inicial.
                   </p>
                 </div>

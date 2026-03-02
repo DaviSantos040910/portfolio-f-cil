@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
@@ -21,11 +21,18 @@ export function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Code2 className="w-5 h-5 text-primary" />
+              <Zap className="w-5 h-5 text-primary" />
             </div>
-            <span className="font-bold text-xl">DevPortfolio</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-lg leading-tight">
+                Davi Santos
+              </span>
+              <span className="text-[10px] text-muted-foreground leading-none font-medium tracking-wide uppercase">
+                Full Stack Developer
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,18 +41,21 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`relative py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.href
+                className={`relative py-2 text-sm font-medium transition-colors hover:text-primary ${location.pathname === link.href
                     ? 'text-primary'
                     : 'text-muted-foreground'
-                }`}
+                  }`}
               >
                 {link.label}
                 {location.pathname === link.href && (
                   <motion.div
                     layoutId="activeNav"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 380,
+                      damping: 30,
+                    }}
                   />
                 )}
               </Link>
@@ -55,7 +65,21 @@ export function Header() {
           {/* Actions */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            
+
+            <Button
+              asChild
+              size="sm"
+              className="hidden md:inline-flex gap-1.5 rounded-full text-xs h-9 px-4 font-semibold"
+            >
+              <a
+                href="https://wa.me/5589981013110?text=Olá,%20vim%20pelo%20seu%20portfólio!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Orçamento
+              </a>
+            </Button>
+
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -63,7 +87,11 @@ export function Header() {
               className="md:hidden"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -84,15 +112,23 @@ export function Header() {
                     key={link.href}
                     to={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-2 rounded-lg transition-colors ${
-                      location.pathname === link.href
+                    className={`block px-4 py-2 rounded-lg transition-colors ${location.pathname === link.href
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-muted'
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
                 ))}
+                <a
+                  href="https://wa.me/5589981013110?text=Olá,%20vim%20pelo%20seu%20portfólio!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-2 rounded-lg bg-primary text-primary-foreground text-center font-semibold"
+                >
+                  Solicitar Orçamento
+                </a>
               </div>
             </motion.div>
           )}

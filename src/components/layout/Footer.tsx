@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Zap, MessageSquare } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,14 +10,22 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2.5 mb-4">
               <div className="p-2 rounded-lg bg-primary/10">
-                <Code2 className="w-5 h-5 text-primary" />
+                <Zap className="w-5 h-5 text-primary" />
               </div>
-              <span className="font-bold text-xl">DevPortfolio</span>
+              <div className="flex flex-col">
+                <span className="font-bold text-lg leading-tight">
+                  Davi Santos
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-none font-medium tracking-wide uppercase">
+                  Full Stack Developer
+                </span>
+              </div>
             </Link>
-            <p className="text-muted-foreground text-sm max-w-xs">
-              Desenvolvedor freelancer apaixonado por criar soluções digitais que fazem a diferença.
+            <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+              Desenvolvo sistemas web completos para pequenas e médias
+              empresas — do planejamento ao deploy, com foco em resultado.
             </p>
           </div>
 
@@ -43,18 +51,26 @@ export function Footer() {
               >
                 Contato
               </Link>
+              <a
+                href="https://wa.me/5589981013110?text=Olá,%20vim%20pelo%20seu%20portfólio!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Solicitar Orçamento
+              </a>
             </nav>
           </div>
 
           {/* Social */}
           <div>
             <h4 className="font-semibold mb-4">Conecte-se</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/DaviSantos040910"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                className="p-2.5 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -63,24 +79,33 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                className="p-2.5 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contato@email.com"
-                className="p-2 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                href="mailto:davisantossousa2@gmail.com"
+                className="p-2.5 rounded-lg bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/5589981013110?text=Olá,%20vim%20pelo%20seu%20portfólio!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg bg-secondary hover:bg-[#25D366]/10 hover:text-[#25D366] transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageSquare className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {currentYear} DevPortfolio. Todos os direitos reservados.</p>
+          <p>© {currentYear} Davi Santos. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

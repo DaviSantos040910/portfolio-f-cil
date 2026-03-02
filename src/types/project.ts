@@ -2,6 +2,13 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
+  // Business-oriented fields
+  strategic_title: string;
+  problem: string;
+  target_audience: string;
+  key_features: string[];
+  adaptability: string;
+  // Original fields
   summary: string;
   description: string;
   tags: string[];
