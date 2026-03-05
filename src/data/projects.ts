@@ -352,6 +352,119 @@ A mesma base técnica pode ser aplicada em:
     created_at: '2025-03-05T00:00:00.000Z',
     updated_at: '2025-03-05T00:00:00.000Z',
   },
+  {
+    id: '4',
+    slug: 'stellarys-styles',
+    title: 'Stellarys Styles',
+    strategic_title: 'Plataforma de E-commerce com Painel Administrativo',
+    problem:
+      'Construir um e-commerce moderno exige mais do que apenas um catálogo visual. É necessário integrar fluxos complexos de navegação, carrinho de compras, checkout e, principalmente, um painel administrativo robusto para gestão da loja — tudo isso com uma experiência de usuário (UX) premium e navegação rápida.',
+    target_audience:
+      'Lojas virtuais, marcas de moda, catálogos de produtos premium e desenvolvedores que buscam referências de arquitetura frontend escalável para plataformas de comércio eletrônico.',
+    key_features: [
+      'Catálogo de produtos filtrado por categoria',
+      'Página de produto individual com imagens e detalhes',
+      'Carrinho de compras dinâmico',
+      'Fluxo completo de checkout simulado',
+      'Painel administrativo para gestão do e-commerce',
+      'Gestão de produtos e categorias via Admin',
+      'Dashboard estatístico e de pedidos',
+      'Estrutura preparada para integração real com backend',
+    ],
+    adaptability:
+      'Este projeto serve como uma fundação adaptável para qualquer operação de e-commerce. A interface foi modularizada para suportar acoplamento com backends reais (Node, Python), banco de dados (PostgreSQL/Supabase) e APIs de pagamento gateway (Stripe, PagSeguro). O painel administrativo pode ser facilmente expandido para adicionar gestão de frete (Correios/Melhor Envio) e controle de estoque.',
+    summary:
+      'Stellarys Styles é um projeto completo de e-commerce premium com interface moderna (desenvolvida com Lovable) que apresenta vitrine de produtos, carrinho de compras e um painel administrativo funcional simulado.',
+    description: `## O Que Este Projeto Demonstra
+
+O **Stellarys Styles** é um e-commerce completo focado no nicho de moda premium desenvolvido para proporcionar uma demonstração realista de produto. O projeto não é apenas uma vitrine visual, mas uma simulação robusta de operação digital, unindo a experiência do cliente final (front-end estético e ágil) com as ferramentas de controle logístico do logista (back-office de administração).
+
+---
+
+## Experiência do Usuário (Frontend)
+
+O desenvolvimento priorizou a entrega de uma **experiência visual premium**, navegação intuitiva e fluidez em telas visuais e móveis.
+
+A plataforma permite aos usuários clientes:
+- **Explorar coleções** em destaque direto na home page
+- **Navegar e filtrar categorias** de forma fácil e sem atritos
+- **Avaliar detalhes** precisos e galerias nas páginas de produto individuais
+- **Gerenciar o carrinho de compras** (adicionando, alterando a quantidade ou excluindo itens)
+- **Simular o fluxo completo de checkout** para testes de conversão
+- **Salvar itens favoritos** e navegar por páginas institucionais padrão (Sobre, Políticas etc.)
+
+Essa interface garante a maximização da conversão mantendo a essência clean e refinada essencial no comércio de moda.
+
+---
+
+## Painel Administrativo (Admin)
+
+O verdadeiro poder do projeto está no **Painel Administrativo Completo** construído para simular o back-office com precisão. O acesso base está liberado em \`/admin/login\` usando \`admin\` / \`stellarys\`.
+
+Através de um dashboard amigável, o negócio pode:
+- **Tomar decisões com base em métricas** gerais do negócio e gráficos de desempenho
+- **Criar, editar e excluir novos produtos** no catálogo
+- **Registrar e organizar categorias**
+- **Acompanhar e visualizar pedidos** realizados pelo front-end
+
+Sem a necessidade de um servidor backend no momento, os dados utilizam \`localStorage\` para prover uma simulação imediata, com velocidade instantânea, ideal para provas de conceito (PoCs).
+
+---
+
+## Arquitetura & Stack Tecnológica
+
+Criado sob um ecossistema front-end dominante, focado em forte tipagem e estilização em nível de utilitários:
+
+| Camada | Tecnologia |
+|---|---|
+| **Core e Rotas** | React com TypeScript no bundler Vite e React Router |
+| **Estilização** | TailwindCSS |
+| **Biblioteca de Componentes** | Component system (shadcn/ui e Lucide Icons) |
+| **Gerenciamento de Estado** | Context API e Hooks customizados |
+| **Persistência Temporária** | Armazenamento via Browser (\`localStorage\`) |
+
+---
+
+## Desenvolvimento Otimizado: *Vibe Coding* com IA (Lovable)
+
+Um dos pontos de vanguarda no desenvolvimento foi a condução usando a plataforma **Lovable**. Todo o refinamento progressivo da interface, estuturação de componentes modulares reutilizáveis e criação das interações do usuário foram guiados por engenharia de prompts assistida por inteligência artificial, demonstrando a versatilidade de adotar AI tools (Vibe Coding) para entregar alto valor de ponta a ponta na construção de UI interativa e arquitetura.
+
+---
+
+## Prova de Habilidades Técnicas
+
+Este trabalho é fundamentalmente um atestado de competência que comprova habilidades vitais:
+- ✔  **Construção de aplicações web completas e complexas**
+- ✔  **Estruturação rigorosa de sistemas de *E-commerce***
+- ✔  **Modelagem e construção de dashboards administrativos** ricos
+- ✔  **Design System** que entrega aparência moderna, premium e de confiança
+- ✔  **Desenvolvimento pragmático com ferramentas *AI-Assisted*** prontas para acelerar resultados de freelancing e produto.`,
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vite',
+      'shadcn/ui',
+      'E-commerce',
+      'Dashboard Admin',
+      'Lovable',
+      'Vibe Coding'
+    ],
+    thumbnail_url: '/projects/stellarys/home.png',
+    gallery_urls: [
+      '/projects/stellarys/produto.png',
+      '/projects/stellarys/carrinho.png',
+      '/projects/stellarys/admin.png',
+    ],
+    video_url: null,
+    live_url: 'https://stellarys-styles.lovable.app',
+    github_url: null,
+    case_study_url: null,
+    is_featured: true,
+    is_published: true,
+    created_at: '2025-03-05T00:00:00.000Z',
+    updated_at: '2025-03-05T00:00:00.000Z',
+  },
 ];
 
 export function getPublishedProjects(): Project[] {
