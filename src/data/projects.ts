@@ -225,6 +225,133 @@ Cada novo cliente precisa apenas de ajuste de conteúdo — a estrutura, design 
     created_at: '2025-03-02T00:00:00.000Z',
     updated_at: '2025-03-02T00:00:00.000Z',
   },
+  {
+    id: '3',
+    slug: 'communityhub',
+    title: 'CommunityHub',
+    strategic_title: 'Plataforma Web Multiusuário (Demo Online)',
+    problem:
+      'Construir uma plataforma comunitária completa exige domínio de múltiplas camadas: autenticação segura, gerenciamento de identidade, armazenamento de mídia em nuvem e interações assíncronas que não travam a experiência do usuário. A maioria dos projetos resolve apenas uma parte — este resolve todas.',
+    target_audience:
+      'Empresas e clientes que precisam de plataformas comunitárias, portais de membros, fóruns corporativos ou qualquer sistema com múltiplos usuários, perfis personalizáveis e interações sociais. A arquitetura é 100% adaptável para qualquer tipo de comunidade ou negócio.',
+    key_features: [
+      'Sistema de autenticação seguro com suporte a OAuth 2.0 (Google)',
+      'Perfis de usuário personalizáveis com upload de avatar em nuvem (Cloudinary CDN)',
+      'Feed de postagens com sistema de curtidas via AJAX (sem recarregar a página)',
+      'Busca de usuários e conteúdos em tempo real (AJAX)',
+      'Painel administrativo completo para moderação de conteúdo',
+      'Banco de dados relacional com PostgreSQL em produção',
+      'Deploy automatizado no Render com pipeline CI/CD via GitHub',
+      'Layout responsivo — Desktop e Mobile',
+    ],
+    adaptability:
+      'A base de autenticação, perfis e interações pode ser reaproveitada para qualquer plataforma comunitária — fóruns, portais de clientes, comunidades de nicho ou plataformas de membros. A arquitetura Django + PostgreSQL suporta escala horizontal e integração com novos módulos sob demanda.',
+    summary:
+      'Sistema multiusuário completo: autenticação, perfis, interações assíncronas e deploy em produção. A demo utiliza temática anime como exemplo, mas a arquitetura é 100% adaptável para qualquer tipo de comunidade ou negócio.',
+    description: `## O Que Este Sistema Faz
+
+O **CommunityHub** é uma plataforma web multiusuário construída do zero com Django, demonstrando a capacidade de criar sistemas comunitários escaláveis — com autenticação segura, perfis personalizáveis, feeds dinâmicos e armazenamento de mídia em nuvem.
+
+A demo utiliza temática anime como exemplo de aplicação, mas a arquitetura é **100% adaptável** para qualquer tipo de comunidade ou negócio.
+
+---
+
+## Problemas Reais Resolvidos
+
+### 🔐 Gestão de Identidade e Segurança
+Sistema de cadastro e login robusto com proteção de dados. Integração com **Google OAuth 2.0** para autenticação social — reduzindo fricção no onboarding sem sacrificar segurança.
+
+### ☁️ Armazenamento Seguro em Nuvem (Anti-Perda)
+Servidores efêmeros perdiam mídias no deploy. A integração com a **API do Cloudinary** resolve esse problema de forma definitiva: avatares são servidos por CDN global, economizando banda do servidor e garantindo que imagens nunca quebrem.
+
+### ⚡ Interações Assíncronas (Melhor UX)
+Páginas não recarregam a cada ação. O sistema de curtidas e a busca em tempo real usam **AJAX via JavaScript puro** — a experiência é instantânea e fluida, provando integração real entre Front e Backend.
+
+### 🏗️ Arquitetura Adaptável
+A mesma base técnica pode ser aplicada em:
+
+| Caso de Uso | Adaptação |
+|---|---|
+| **Comunidades de Nicho** | Grupos temáticos, fóruns, bases de fãs |
+| **Plataformas de Membros** | Áreas exclusivas com perfil e conteúdo restrito |
+| **Portais de Clientes** | Dashboards personalizados por empresa |
+| **Fóruns Corporativos** | Comunicação interna com controle de acesso |
+
+---
+
+## Stack Tecnológica
+
+| Camada | Tecnologia |
+|---|---|
+| **Backend** | Python · Django 5.2 |
+| **Banco de Dados** | PostgreSQL (Produção) · SQLite (Local) |
+| **Frontend** | HTML · CSS · JavaScript (Vanilla) · AJAX · Lucide Icons |
+| **Autenticação** | Django Auth · OAuth 2.0 (Google) |
+| **Cloud & Mídia** | Cloudinary CDN |
+| **Servidor** | Gunicorn · Whitenoise (Arquivos Estáticos) |
+| **DevOps** | Render · GitHub CI/CD · Variáveis de Ambiente |
+
+---
+
+## Papéis do Desenvolvedor
+
+### Como Desenvolvedor Back-End ⚙️
+- Modelei os relacionamentos (\`Post\`, \`Profile\`) usando Django ORM com premissas sólidas de banco relacional
+- Configurei painel administrativo para controle total das postagens
+- Isolei dados sensíveis em variáveis de ambiente (WebServices do Render)
+- Implementei autenticação com suporte a OAuth social (Google)
+
+### Como Desenvolvedor Front-End 🎨
+- Interface com tipografia moderna (*Rubik* do Google Fonts)
+- Sistema de Cards (estilo galeria) e Sidebar sempre visível
+- Interações assíncronas (AJAX) para curtidas e busca em tempo real
+
+### Como Integrador / DevOps 🌐
+- Pipeline automático: push no GitHub → deploy no Render com banco PostgreSQL ativo
+- Script \`build.sh\` para manter pacotes estáveis em instâncias efêmeras
+
+---
+
+## O Que Este Projeto Demonstra
+
+| Competência | ✔ |
+|---|---|
+| Sistema multiusuário | ✔ |
+| Lógica complexa (autenticação, sessão, OAuth) | ✔ |
+| UI + Backend integrados | ✔ |
+| Upload de mídia em nuvem (Cloudinary CDN) | ✔ |
+| Interações assíncronas (AJAX) | ✔ |
+| Deploy em produção (Render + PostgreSQL) | ✔ |
+| Design responsivo (Desktop + Mobile) | ✔ |
+
+---
+
+*"As tecnologias aplicadas — segurança de usuários, autenticação social, gestão de banco de dados relacional e manipulação segura de APIs na nuvem — são as bases exigidas em qualquer SaaS ou Web App corporativo de sucesso."*`,
+    tags: [
+      'Python',
+      'Django',
+      'PostgreSQL',
+      'Full Stack',
+      'Plataforma Multiusuário',
+      'OAuth 2.0',
+      'Cloudinary CDN',
+      'AJAX',
+      'Deploy em Produção',
+    ],
+    thumbnail_url: '/projects/communityhub/landing.png',
+    gallery_urls: [
+      '/projects/communityhub/login.png',
+      '/projects/communityhub/feed.png',
+    ],
+    video_url: null,
+    live_url: 'https://anime-social-davi-santos.onrender.com',
+    github_url: null,
+    case_study_url: null,
+    is_featured: true,
+    is_published: true,
+    created_at: '2025-03-05T00:00:00.000Z',
+    updated_at: '2025-03-05T00:00:00.000Z',
+  },
 ];
 
 export function getPublishedProjects(): Project[] {
