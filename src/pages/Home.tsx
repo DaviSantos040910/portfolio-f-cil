@@ -168,13 +168,13 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
-              Desenvolvo sistemas web completos para{' '}
+              Desenvolvo sistemas web e <br className="hidden md:block" />aplicativos mobile para{' '}
               <span className="gradient-text">impulsionar seu negócio</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              Soluções personalizadas com autenticação, painéis administrativos, automação com IA e integração com serviços cloud — prontas para escalar.
+              Soluções multiplataforma personalizadas: painéis administrativos, aplicativos escaláveis (iOS & Android) e integração com serviços cloud.
             </p>
 
             {/* CTAs */}
@@ -238,7 +238,7 @@ export default function Home() {
               O Que Eu Entrego
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Sistemas completos, prontos para produção — focados em resolver problemas reais do seu negócio.
+              Sistemas web completos e aplicativos mobile prontos para produção — focados em resolver problemas reais do seu negócio.
             </p>
           </motion.div>
 

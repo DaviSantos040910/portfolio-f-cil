@@ -30,7 +30,7 @@ export function Header() {
                 Davi Santos
               </span>
               <span className="text-[10px] text-muted-foreground leading-none font-medium tracking-wide uppercase">
-                Full Stack Developer
+                Criador de Produtos Digitais (Web/Mobile)
               </span>
             </div>
           </Link>
@@ -42,8 +42,8 @@ export function Header() {
                 key={link.href}
                 to={link.href}
                 className={`relative py-2 text-sm font-medium transition-colors hover:text-primary ${location.pathname === link.href
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
                   }`}
               >
                 {link.label}
@@ -113,8 +113,8 @@ export function Header() {
                     to={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`block px-4 py-2 rounded-lg transition-colors ${location.pathname === link.href
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-muted-foreground hover:bg-muted'
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-muted-foreground hover:bg-muted'
                       }`}
                   >
                     {link.label}

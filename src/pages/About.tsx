@@ -41,14 +41,14 @@ const services = [
   },
   {
     icon: CreditCard,
-    title: 'Plataformas SaaS',
+    title: 'SaaS & Apps Mobile',
     description:
-      'Produtos digitais com planos de assinatura, checkout e multi-tenancy.',
+      'Produtos digitais nativos e web com planos de assinatura, pagamentos e escala.',
   },
 ];
 
 const stack = {
-  frontend: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Vite'],
+  frontend_mobile: ['React', 'React Native', 'Expo', 'TypeScript', 'TailwindCSS'],
   backend: ['Node.js', 'Supabase', 'PostgreSQL', 'Deno (Edge Functions)'],
   'integrações': ['Stripe', 'MailerSend', 'WhatsApp API', 'OpenAI'],
   deploy: ['Railway', 'Vercel', 'Docker', 'GitHub Actions'],
@@ -87,8 +87,8 @@ export default function About() {
                     <div className="text-6xl font-extrabold gradient-text mb-2">
                       DS
                     </div>
-                    <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest">
-                      Full Stack Developer
+                    <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest mt-1">
+                      Produtos Digitais <br />(Web/Mobile)
                     </p>
                   </div>
                 </div>
