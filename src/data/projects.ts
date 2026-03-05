@@ -107,6 +107,124 @@ Esta plataforma não é um sistema "congelado". A arquitetura foi pensada para c
     created_at: '2025-02-28T00:00:00.000Z',
     updated_at: '2025-02-28T00:00:00.000Z',
   },
+  {
+    id: '2',
+    slug: 'landing-page-comercial',
+    title: 'Landing Page Comercial',
+    strategic_title: 'Modelo de Landing Page de Alta Conversão para Prestadores de Serviço e Negócios Locais',
+    problem:
+      'Prestadores de serviço e negócios locais perdem clientes todos os dias por não terem presença digital profissional. Sem uma landing page estratégica, dependem apenas de indicações boca-a-boca e redes sociais genéricas — perdendo alcance, credibilidade e oportunidades de conversão direta.',
+    target_audience:
+      'Prestadores de serviço, profissionais autônomos, pequenos negócios locais e empresas que precisam de uma presença digital focada em conversão — transformando visitantes em leads e orçamentos reais através de um site otimizado.',
+    key_features: [
+      'Arquitetura de landing page orientada à conversão com CTAs estratégicos',
+      'Integração com WhatsApp para geração de leads instantânea',
+      'Seções modulares adaptáveis a qualquer segmento de serviço',
+      'Design premium em dark mode com identidade visual profissional',
+      'Galeria visual de trabalhos/projetos com categorização',
+      'Formulário de contato integrado com mapa de localização',
+      'SEO otimizado para buscas locais e regionais',
+      'Layout 100% responsivo — mobile, tablet e desktop',
+    ],
+    adaptability:
+      'Este modelo foi projetado para ser reutilizável. A mesma estrutura de conversão — hero com CTA, seção de serviços, portfólio visual, prova social e contato direto — pode ser adaptada para qualquer prestador de serviço local: encanadores, pintores, fotógrafos, personal trainers, advogados, consultórios, salões de beleza. A arquitetura modular permite customização rápida sem reconstruir do zero.',
+    summary:
+      'Landing page comercial de alta conversão desenvolvida para negócios locais. Estrutura estratégica com CTA direto, integração WhatsApp, galeria de trabalhos e SEO local — um modelo replicável para qualquer prestador de serviço.',
+    description: `## Visão Geral do Projeto
+
+Esta é uma **landing page comercial de alta conversão**, desenvolvida para atender prestadores de serviço e negócios locais que precisam de presença digital profissional para atrair e converter clientes.
+
+O projeto foi construído com foco em **estratégia de conversão** — cada seção da página tem um propósito claro dentro do funil: atrair atenção, apresentar valor, gerar confiança e converter em contato direto.
+
+> **Caso real:** Desenvolvido para um prestador de serviços na região de São Raimundo Nonato-PI, o site já é utilizado como ferramenta ativa de captação de clientes locais.
+
+---
+
+## Estratégia de Conversão
+
+### 🎯 Hero Section com CTA Direto
+A primeira tela do site já entrega a proposta de valor e oferece dois caminhos claros ao visitante: **solicitar orçamento** ou **ver trabalhos realizados**. Sem distrações, sem menus complexos — foco total em ação.
+
+### 📊 Prova Social Imediata
+Métricas de impacto (anos de experiência, projetos realizados, satisfação do cliente) são exibidas logo abaixo da hero, reforçando autoridade e confiança antes mesmo do visitante rolar a página.
+
+### 🔧 Seções de Serviços Modulares
+Os serviços são organizados em categorias visuais com cards descritivos. Essa estrutura é **100% adaptável** — basta trocar os textos e ícones para atender qualquer nicho. A organização por categoria facilita a compreensão e aumenta o tempo de permanência na página.
+
+### 📸 Galeria de Trabalhos com Tags
+Um portfólio visual com fotos reais de projetos concluídos, usando tags de categoria para navegação rápida. Mostra resultados concretos e gera confiança no visitante.
+
+### 👤 Seção "Sobre" — Conexão Pessoal
+Biografia profissional com foto, valores e área de atuação. Para negócios locais, a conexão pessoal é um dos fatores mais decisivos na conversão.
+
+### 💬 Contato Multicanal + WhatsApp Flutuante
+Formulário de contato integrado com localização no mapa. O botão flutuante do WhatsApp acompanha toda a navegação, garantindo que o visitante possa iniciar uma conversa em qualquer momento — principal canal de conversão para negócios locais.
+
+---
+
+## Arquitetura Técnica
+
+| Aspecto | Implementação |
+|---|---|
+| **Framework** | React + Next.js para performance e SEO |
+| **Estilização** | Tailwind CSS com design system customizado |
+| **Responsividade** | Mobile-first, adaptado para todos os dispositivos |
+| **Performance** | Otimização de imagens, lazy loading, carregamento rápido |
+| **SEO** | Meta tags, estrutura semântica, schema markup para negócios locais |
+| **Conversão** | CTAs estratégicos, WhatsApp API, formulário integrado |
+
+---
+
+## Adaptabilidade — Um Modelo, Múltiplos Negócios
+
+A grande vantagem deste projeto é a **replicabilidade**. A mesma estrutura de conversão serve para:
+
+| Segmento | Adaptação |
+|---|---|
+| **Serviços Técnicos** | Eletricistas, encanadores, técnicos de informática |
+| **Saúde & Beleza** | Salões, barbearias, nutricionistas, dentistas |
+| **Educação** | Professores particulares, escolas de idiomas, cursos |
+| **Profissionais Liberais** | Advogados, contadores, fotógrafos, arquitetos |
+| **Comércio Local** | Restaurantes, lojas, pet shops, oficinas |
+
+Cada novo cliente precisa apenas de ajuste de conteúdo — a estrutura, design e lógica de conversão já estão prontos.
+
+---
+
+## Resultados de UX e Conversão
+
+- **Tempo de carregamento** < 2s em conexões móveis
+- **WhatsApp como canal principal** — sem fricção para o cliente
+- **CTA visível** em 100% da navegação (botão flutuante)
+- **Hierarquia visual clara** — informação mais importante primeiro
+- **Design premium** que transmite profissionalismo e confiança
+
+---
+
+*Ideal para profissionais e empresas que desejam aumentar sua presença digital e transformar visitantes em clientes.*`,
+    tags: [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'Tailwind CSS',
+      'Landing Page',
+      'UX/Conversão',
+    ],
+    thumbnail_url: '/projects/portfolio-eletrico/landing.png',
+    gallery_urls: [
+      '/projects/portfolio-eletrico/servicos.png',
+      '/projects/portfolio-eletrico/portfolio.png',
+      '/projects/portfolio-eletrico/contato.png',
+    ],
+    video_url: null,
+    live_url: 'https://portifolioeletrico.vercel.app',
+    github_url: null,
+    case_study_url: null,
+    is_featured: true,
+    is_published: true,
+    created_at: '2025-03-02T00:00:00.000Z',
+    updated_at: '2025-03-02T00:00:00.000Z',
+  },
 ];
 
 export function getPublishedProjects(): Project[] {
